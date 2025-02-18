@@ -1,7 +1,7 @@
 const submitData = (name, email) => {
     const formData = {
         name: name,
-        email: email,
+        email: email
     };
   
     const configurationObject = {
@@ -18,12 +18,13 @@ const submitData = (name, email) => {
         return response.json();
       })
     .then(function(data){
-        obj = data.id
-        document.body.innerHTML += obj
+        document.body.innerHTML += data.id;
     })
     .catch(function (error) {
-        alert("Unauthorized Access");
-        console.log(error.message);
+        document.body.innerHTML += error.message;
     });
 }
+
+document.addEventListener('DOMContentLoaded', submitData);
+
 
